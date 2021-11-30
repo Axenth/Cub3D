@@ -1,4 +1,4 @@
-# Cub3D
+# Cub3D [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/jlensing/cub3d)](https://github.com/JaeSeoKim/badge42)
 
 To compile simply run:
 ```
