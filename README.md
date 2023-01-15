@@ -1,5 +1,7 @@
 # Cub3D [![jlensing's 42 cub3d Score](https://badge42.vercel.app/api/v2/cl1jwurq1001109l1q4s085aw/project/1852689)](https://github.com/JaeSeoKim/badge42)
 
+Note: It will currently only compile on MacOS thanks to the limitations of Minilibx (mlx)
+
 To compile simply run:
 ```
 make
