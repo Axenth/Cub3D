@@ -26,7 +26,12 @@ static void	safety(t_data *data)
 		data->error = INVALID_MAP_FILE;
 		handle_error(data);
 	}
+	#ifdef __APPLE__
 	mlx_get_screen_size(data->mlx_ptr, &x, &y);
+	#elif __linux__
+	x = 3840;
+	y = 2160;
+	#endif
 	if (data->screen_info->screenwidth < 0 && data->saveopt != 1)
 		data->screen_info->screenwidth = x;
 	if (data->screen_info->screenheight < 0 && data->saveopt != 1)
@@ -85,7 +90,12 @@ static void	set_resolution2(char *line, t_data *data)
 	data->screen_info->screenwidth = ft_atoi(temp);
 	set_resolution3(line, data);
 	safety(data);
+	#ifdef __APPLE__
 	mlx_get_screen_size(data->mlx_ptr, &x, &y);
+	#elif __linux__
+	x = 3840;
+	y = 2160;
+	#endif
 	if (data->screen_info->screenwidth > x && data->saveopt != 1)
 		data->screen_info->screenwidth = x;
 	if (data->screen_info->screenheight > y && data->saveopt != 1)

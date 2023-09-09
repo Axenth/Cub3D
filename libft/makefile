@@ -66,15 +66,18 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) rcs $@ $^
+	@echo "LNK $@"
+	@$(AR) rcs $@ $^
 
 %.o: %.c
-	clang -o $@ -c $< $(FLAGS) -O2
+	@clang -o $@ -c $< $(FLAGS) -O2
+	@echo -n "\033[2K \rCC $@"
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo "Cleaning libft"
+	@$(RM) $(NAME)
 
 re: fclean all

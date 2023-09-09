@@ -45,6 +45,7 @@ void	handle_error(t_data *data)
 
 void	check_args(t_data *data, int argv, char **argc)
 {
+	data->saveopt = 0;
 	if (argv > 1 && argv <= 3)
 	{
 		data->map_path = argc[1];

@@ -12,6 +12,7 @@
 
 #include <cub3d.h>
 #include <keys.h>
+#include <stdio.h>
 
 int		key_release(int keycode, t_data *data)
 {
@@ -34,6 +35,7 @@ int		key_release(int keycode, t_data *data)
 
 int		key_handler(int keycode, t_data *data)
 {
+	printf("Keynumber: %d", keycode);
 	if (keycode == KEY_NUM_MINUS)
 		data->img->textured *= -1;
 	if (keycode == KEY_F12)

@@ -17,7 +17,7 @@
 
 t_bool					check_zero_flag(struct s_info info)
 {
-	if (info.format_type >= 1 || info.format_type <= 3 || info.format_type == 8)
+	if ((info.format_type >= 1 && info.format_type <= 3) || info.format_type == 8)
 		return (e_true);
 	if ((info.format_type >= 4 && info.format_type <= 7) &&
 												info.precision_flag == e_false)

@@ -50,7 +50,9 @@ static void	init_images(t_data *data)
 			data->screen_info->screenwidth, data->screen_info->screenheight);
 	data->img->img_data = mlx_get_data_addr(data->img->img, &bbp, &size_line,
 																	&endian);
+#ifdef __APPLE__
 	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, data->img->img);
+#endif
 	data->img->size_line = size_line;
 	data->img->bpp = bbp;
 	data->img->endian = endian;
@@ -79,8 +81,10 @@ int			loop(t_data *data)
 		screenshot("save.bmp", data);
 		exit_game(data);
 	}
+#ifdef __APPLE_
 	mlx_sync(MLX_SYNC_WIN_FLUSH_CMD, data->mlx_win);
 	mlx_sync(MLX_SYNC_WIN_CMD_COMPLETED, data->mlx_win);
+#endif
 	return (1);
 }
 

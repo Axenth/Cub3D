@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include <cub3d.h>
+#include <libft.h>
 
+#ifdef __APPLE__
 static void	load_png_images_2(t_data *data)
 {
 	int img_width;
@@ -62,6 +64,13 @@ static void	load_png_images(t_data *data)
 	}
 	load_png_images_2(data);
 }
+#elif __linux__
+	static void load_png_images(t_data *data)
+	{
+		ft_printf("Unable to load png images on linux");
+		load_images_addr(data);
+	}
+#endif
 
 static void	load_xpm_images_2(t_data *data)
 {
